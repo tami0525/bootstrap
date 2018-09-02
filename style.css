@@ -1,0 +1,39 @@
+header{
+  text-align:center;
+  width: 100%;
+}
+p{
+  text-align: left;
+}
+
+.back_image {
+  width: 100%;
+  background-image:url(image/note.jpg);
+  background-size: cover;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.top{
+  margin-top:20px;
+  width: 100%;
+}
+
+.container{
+  width: 100%;
+  margin: 0 auto;
+  }
+
+.gazou {
+    opacity : 0;
+    transform : translate(0, 50px);
+    transition : all 300ms;
+}
+.gazou.scrollin {
+    opacity : 1;
+    transform : translate(0, 0);
+}
+
+.member{
+  width:100%;
+}
