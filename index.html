@@ -2,44 +2,91 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>BootstrapとJQueryの使い方</title>
   </head>
   <body>
-    <section class="py-3">
-       <div class="container text-center">
+    <header>
+        <div>
+          <img src="image/METC.png" class="metc col-sm-8 col-10">
+        </div>
+    </header>
+    <div>
+      <img src="image/Stein.png" class="metc top">
+    </div>
+
+　　<div class="container">
+      <section class="py-2">
+       <div class="text-center">
           <div class="mb-4 row">
              <div class="col-sm-5">
-               <img src="image/logo.jpg" class="w-50">
+               <img src="image/logo.jpg" class="w-50 gazou">
              </div>
              <div class="col-sm-7">
-               <h2>Awesome</h2>
-               <p>Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello.</p>
+               <h3 class="py-3">プログラミング学習</h3>
+               <p>それぞれの目的のため、プログラミングを中心にITを学ぶコミュニティです。</p>
              </div>
           </div>
-          <div class="mb-4 row">
+          <div class="row">
             <div class="col-sm-5 order-sm-2">
-              <img src="image/logo.jpg" class="w-50">
+              <img src="image/medi.png" class="w-50 gazou">
             </div>
             <div class="col-sm-7 order-sm-1">
-              <h2>Awesome</h2>
-              <p>Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello. Hello.</p>
+              <h3 class="py-3">本業は医療職</h3>
+              <p>メンバーのほとんどが、普段は理学療法士や臨床工学技士として医療現場で働いています。</p>
             </div>
           </div>
        </div>
      </section>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   </div>
+    <br>
+  <img src="image/member.png" class="member">
+     <br>
+   <div class="container text-center">
+
+     <div class="nav nav-tabs" id="nav-tab" role="tablist">
+       <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">たみお</a>
+       <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">もりｼﾞｭﾝ</a>
+       <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">しょーち</a>
+     </div>
+   </nav>
+  <div class="tab-content" id="nav-tabContent">
+   <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+     <a class="twitter-timeline" width="320px" height="500px" href="https://twitter.com/00tamio00?ref_src=twsrc%5Etfw">Tweets by 00tamio00</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+   </div>
+   <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+     <a class="twitter-timeline" width="320px" height="500px" href="https://twitter.com/penk370?ref_src=twsrc%5Etfw">Tweets by penk370</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+   </div>
+  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+     <a class="twitter-timeline" width="320px" height="500px" href="https://twitter.com/narasika0814?ref_src=twsrc%5Etfw">Tweets by narasika0814</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+</div>
+</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-<!--画像をフェードインさせたいです-->
-    <script>
+  <script>
       $(function() {
-          $("img").hide().fadeIn(2000);
+          $(".metc").hide().fadeIn(2000);
       });
-    </script>
+
+    $(function(){
+        $(window).scroll(function (){
+            $('.gazou').each(function(){
+                var elemPos = $(this).offset().top;
+                var scroll = $(window).scrollTop();
+                var windowHeight = $(window).height();
+                if (scroll > elemPos - windowHeight + 200){
+                    $(this).addClass('scrollin');
+                }
+            });
+        });
+    });
+</script>
 
 </body>
-
 </html>
